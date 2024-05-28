@@ -59,7 +59,7 @@ class AuthController extends ChangeNotifier {
     dynamic data = jsonDecode(response.data);
 
     await SharedPreferenceClient.setString('access_token', data['data']['access_token']);
-    await SharedPreferenceClient.setString('access_token', data['data']['access_token']);
+    await SharedPreferenceClient.setString('refresh_token', data['data']['refresh_token']);
     await SharedPreferenceClient.setString('user_name', loginUserName.text);
   
     notifyListeners();
